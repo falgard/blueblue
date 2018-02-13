@@ -1,0 +1,5 @@
+Logging in to Amazon ECR...
+
+[Container] 2018/02/13 00:45:06 Running command $(aws ecr get-login --region eu-west-1)
+unknown shorthand flag: 'e' in -e
+See 'docker login --help'.
