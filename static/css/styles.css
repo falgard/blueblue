@@ -2,7 +2,8 @@ body, html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  /* font-family: "Source Sans Pro", Arial, sans-serif; */
   font-weight: 400;
   font-size: 18px;
   line-height: 1.8;
@@ -151,7 +152,8 @@ h3 {
 
 #hero .holder {
   color: #fff;
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  /* font-family: "Source Sans Pro", Arial, sans-serif; */
+  font-family: "Raleway", Helvetica, sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -208,7 +210,7 @@ h3 {
 #wedding-day .countdown small {
   display: block;
   font-size: 14px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   letter-spacing: 10px;
   text-transform: uppercase;
