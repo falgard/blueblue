@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.6.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
+    "waypoints": "^4.0.1",
     "webpack": "^3.11.0"
   }
 }
