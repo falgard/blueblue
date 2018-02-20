@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
-    new ExtractTextPlugin('dist/styles/main.css', {
+    new ExtractTextPlugin('styles/main.css', {
         allChunks: true
     }),
     new HtmlWebpackPlugin({
