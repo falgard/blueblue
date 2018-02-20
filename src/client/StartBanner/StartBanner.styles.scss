@@ -1,0 +1,50 @@
+.Section {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -2;
+}
+
+.Image {
+  min-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.Titles {
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.Title {
+  font-size: 110px;
+  font-weight: bold;
+
+  .Small & {
+    font-size: 60px;
+  }
+}
+
+.SubTitle {
+  font-size: 14px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
