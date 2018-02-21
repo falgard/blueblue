@@ -6,11 +6,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import DocumentMeta from 'react-document-meta'
 
 import ScrollToTop from './Utils/ScrollToTop'
 import StartBanner from './StartBanner/StartBanner'
-
-import DocumentMeta from 'react-document-meta'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,7 +17,7 @@ export default class App extends React.Component {
 
     this.handleResize = this.handleResize.bind(this)
     const width = window.innerWidth
-
+    console.log('app.js')
     this.state = {
       hasScrolled: false,
       size: {
@@ -28,11 +27,15 @@ export default class App extends React.Component {
         xlarge: width > 1200
       }
     }
+    console.log(this.state)
 
     this.resize = undefined
+    // ReactGA.initialize('UA-106217141-1')
+    // ReactGA.pageview(window.location.pathname)
   }
 
   componentDidMount() {
+    console.log('did mount')
     window.addEventListener('resize', this.handleResize)
   }
 
@@ -52,6 +55,7 @@ export default class App extends React.Component {
   }
 
   StartPage(size) {
+    console.log('render startpage')
     const meta = {
       title: 'Blå blå är kärleken - Cissi & Micke',
       description: 'Blå blå är kärleken'
@@ -65,6 +69,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log('render')
     return (
       <Router>
         <ScrollToTop>
