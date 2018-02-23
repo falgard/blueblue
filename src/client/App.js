@@ -9,7 +9,7 @@ import {
 import DocumentMeta from 'react-document-meta'
 
 import ScrollToTop from './Utils/ScrollToTop'
-import StartBanner from './StartBanner/StartBanner'
+import Hero from './Hero/Hero'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ export default class App extends React.Component {
 
     this.handleResize = this.handleResize.bind(this)
     const width = window.innerWidth
-    console.log('app.js')
     this.state = {
       hasScrolled: false,
       size: {
@@ -27,7 +26,6 @@ export default class App extends React.Component {
         xlarge: width > 1200
       }
     }
-    console.log(this.state)
 
     this.resize = undefined
     // ReactGA.initialize('UA-106217141-1')
@@ -35,7 +33,6 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('did mount')
     window.addEventListener('resize', this.handleResize)
   }
 
@@ -55,7 +52,6 @@ export default class App extends React.Component {
   }
 
   StartPage(size) {
-    console.log('render startpage')
     const meta = {
       title: 'Blå blå är kärleken - Cissi & Micke',
       description: 'Blå blå är kärleken'
@@ -63,13 +59,12 @@ export default class App extends React.Component {
 
     return (
       <DocumentMeta {...meta}>
-        <StartBanner id='start' size={size} />
+        <Hero id='start' size={size} />
       </DocumentMeta>
     )
   }
 
   render() {
-    console.log('render')
     return (
       <Router>
         <ScrollToTop>
