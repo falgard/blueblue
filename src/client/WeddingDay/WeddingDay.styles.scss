@@ -1,0 +1,27 @@
+
+#wedding-day {
+  .caption {
+    top: 60%;
+  }
+
+  .countdown {
+    color: #fff;
+
+    span {
+      margin: 0 30px;
+      display: inline-block;
+      font-family: "Clicker Script", cursive;
+      font-size: 80px;
+      font-weight: 800;
+    }
+  
+    small {
+      display: block;
+      font-size: 14px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+  }
+}
