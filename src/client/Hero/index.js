@@ -2,29 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+import mainStyles from '../App.scss'
 import styles from './Hero.styles.scss'
 
   const HeroSection = props => {
-    const heroClasses = classNames(styles.Section, {
-      [styles.Small]: props.size.small,
-      [styles.bgimg]: true,
-      [styles.bgimgvarvet2]: true
+    const heroClasses = classNames({
+      [mainStyles.bg__img]: true,
+      [mainStyles.bg__img_varvet2]: true,
+      [styles.bg__img_varvet2]: true
     })
 
     const animationClasses = classNames({
+      [mainStyles.caption]: true,
       [styles.caption]: true,
       'animated': true,
       'fadeInUp': true
     })
 
-    var infoClasses = classNames({
+    const infoClasses = classNames({
       [styles.info]: true,
       'animate-box': true
     })
 
   return (
-    <section id="hero">
-      <div className={styles.overlay}></div>
+    <section id={props.id}>
+      <div className={mainStyles.bg__overlay}></div>
       <div className={heroClasses}>
         <div className={animationClasses}>
           <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>

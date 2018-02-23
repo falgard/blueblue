@@ -51,27 +51,27 @@ body, html {
 }
 
 .bgimg-varvet-1 {
-  background-image: url("/images/varvet.jpg");
+  background-image: url("../images/varvet.jpg");
   min-height: 100%;
 }
 
 .bgimg-varvet-2 {
-  background-image: url("/images/varvet2.jpg");
+  background-image: url("../images/varvet2.jpg");
   height: 90%;
 }
 
 .bgimg-varvet-3 {
-  background-image: url("/images/varvet3.jpg");
+  background-image: url("../images/varvet3.jpg");
   min-height: 100%;
 }
 
 .bgimg-kastellet {
-  background-image: url("/images/kastellet.jpg");
+  background-image: url("../images/kastellet.jpg");
   min-height: 400px;
 }
 
 .bgimg-hedvig {
-  background-image: url("/images/hedvig.jpg");
+  background-image: url("../images/hedvig.jpg");
   min-height: 400px;
 }
 

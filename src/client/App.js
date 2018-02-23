@@ -9,7 +9,8 @@ import {
 import DocumentMeta from 'react-document-meta'
 
 import ScrollToTop from './Utils/ScrollToTop'
-import Hero from './Hero/Hero'
+import Hero from './Hero'
+import WeddingDay from './WeddingDay'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -59,7 +60,8 @@ export default class App extends React.Component {
 
     return (
       <DocumentMeta {...meta}>
-        <Hero id='start' size={size} />
+        <Hero id='hero' size={size} />
+        <WeddingDay id='wedding-day' size={size} />
       </DocumentMeta>
     )
   }
