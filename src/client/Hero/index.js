@@ -17,6 +17,7 @@ export default class Hero extends React.Component {
   }
 
   handleWaypointEnter() {
+    console.log('waypoint - hero')
     this.setState({
       animate: true
     })
