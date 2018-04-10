@@ -4,6 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+const extractSass = new ExtractTextPlugin('style.[chunkhash].css', {
+  allChunks: false
+})
+
 let pathsToClean = [
   'dist'
 ]
@@ -30,15 +34,30 @@ module.exports = {
         },
         {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-      }
+          loader: ExtractTextPlugin.extract(`css-loader?minimize&modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
+        },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          loader: 'responsive-loader',
+          options: {
+             adapter: require('responsive-loader/sharp'),
+             limit: 8192,
+             name: 'images/[name].[ext]'
+          }
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'react-svg-loader'
+            }
+          ]
+        }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
-    new ExtractTextPlugin('styles/main.css', {
-        allChunks: true
-    }),
+    extractSass,
     new HtmlWebpackPlugin({
       template: 'src/templates/index.ejs'
     })

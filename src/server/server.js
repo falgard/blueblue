@@ -19,12 +19,12 @@ if (process.env.NODE_ENV == 'development') {
   })
 }
 
-// app.use('/', express.static(__dirname + '/../../dist', {
-//   etag: true,
-//   maxAge: oneWeek
-// }))
+// app.use(express.static(path.join(__dirname, '../../src/static')));
 
-app.use(express.static(path.join(__dirname, '../../src/static')));
+app.use('/', express.static(__dirname + '/../../dist', {
+  etag: true,
+  maxAge: 604800000
+}))
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
