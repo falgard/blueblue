@@ -68,6 +68,7 @@ export default class Hero extends React.Component {
           </p>
         </div>
       </div>
+      <br clear="all"/>
     </section>
   )
   }

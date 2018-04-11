@@ -10,19 +10,19 @@ import styles from './WeddingDay.styles.scss'
 export default class WeddingDay extends React.Component {
   constructor(props) {
     super(props)    
-    // this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
+    this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
       animate: false
     }
   }
 
-  // handleWaypointEnter() {
-  //   console.log('waypoint - weddingday')
-  //   this.setState({
-  //     animate: true
-  //   })
-  // }
+  handleWaypointEnter() {
+    console.log('waypoint - weddingday')
+    this.setState({
+      animate: true
+    })
+  }
 
   render() {
     const imageClasses = classNames({
@@ -58,9 +58,9 @@ export default class WeddingDay extends React.Component {
     return (
       <section id={this.props.id}>
         <div className={imageClasses}>
-          <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={animateBoxWaypoint}>
-              <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
+            <Waypoint onEnter={this.handleWaypointEnter} />
+            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
           </div>
         </div>
       </section>
