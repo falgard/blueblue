@@ -31,6 +31,15 @@ module.exports = {
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+      },
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+           adapter: require('responsive-loader/sharp'),
+           limit: 8192,
+           name: 'images/[name].[ext]'
+        }
       }
     ]
   },
