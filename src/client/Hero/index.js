@@ -27,7 +27,6 @@ export default class Hero extends React.Component {
     const heroClasses = classNames({
       [mainStyles.bg__img]: true,
       [mainStyles.bg__img_varvet2]: true,
-      [styles.bg__img_varvet2]: true
     })
 
     const animationClasses = classNames({
@@ -45,7 +44,7 @@ export default class Hero extends React.Component {
 
   return (
     <section id={this.props.id}>
-      <div className={mainStyles.bg__overlay}></div>
+      <div className={styles.bg__overlay}></div>
       <div className={heroClasses}>
           <div className={animationClasses}>
             <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
@@ -53,7 +52,6 @@ export default class Hero extends React.Component {
             <p>07.28.2018</p>
           </div>
       </div>
-
       <div className={styles.info}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
@@ -68,7 +66,6 @@ export default class Hero extends React.Component {
           </p>
         </div>
       </div>
-      <br clear="all"/>
     </section>
   )
   }

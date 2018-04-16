@@ -45,8 +45,14 @@ h3 {
   color: #111;
 }
 
-section, div {
-  height: 100%;
+// section, div {
+//   height: 100%;
+// }
+
+section {
+  .holder div {
+    height: initial;
+  }
 }
 
 // h1 {
@@ -104,24 +110,13 @@ a {
 // }
 
 .bg {
-  &__overlay {
-    position: absolute !important;
-    width: 100%;
-    height: 90%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
   &__gradient {
     background-image: linear-gradient(120deg, #89f7fe 0%, #4676fa 100%);
   }
 
   &__img {
     position: relative;
+    height: 800px;
     /* opacity: 0.65; */
     background-attachment: fixed;
     background-position: center;
@@ -130,7 +125,6 @@ a {
   
     &_varvet1 {
       background-image: url("../static/images/varvet.jpg");
-      min-height: 100%;
     }
   
     &_varvet2 {
@@ -139,19 +133,22 @@ a {
 
     &_varvet3 {
       background-image: url("../static/images/varvet3.jpg");
-      min-height: 100%;
     }
     
     &_kastellet {
       background-image: url("../static/images/kastellet.jpg");
-      min-height: 400px;
+      height: 400px;
     }
     
     &_hedvig {
       background-image: url("../static/images/hedvig.jpg");
-      min-height: 400px;
+      height: 400px;
     }
   }
+}
+
+.holder {
+  height: 400px;
 }
 
 .caption {
@@ -172,7 +169,7 @@ a {
   }
   
   span.border {
-    background-color: #111;
+    background-image: linear-gradient(120deg, #89f7fe 0%, #4676fa 100%);
     color: #fff;
     padding: 18px;
     font-size: 25px;
@@ -181,6 +178,8 @@ a {
 }
 
 .info {
+  position: relative;
+  height: auto;
   padding: 200px 0;
   background-color:white;
   text-align: justify;

@@ -11,6 +11,10 @@ import DocumentMeta from 'react-document-meta'
 import ScrollToTop from './Utils/ScrollToTop'
 import Hero from './Hero'
 import WeddingDay from './WeddingDay'
+import Ceremony from './Ceremony'
+import Dinner from './Dinner'
+import Accommodation from './Accommodation'
+import Video from './Video'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -38,6 +42,7 @@ export default class App extends React.Component {
   }
 
   handleResize() {
+    console.log('looool')
     clearTimeout(this.resize)
     this.resize = setTimeout(() => {
       const width = window.innerWidth
@@ -62,6 +67,10 @@ export default class App extends React.Component {
       <DocumentMeta {...meta}>
         <Hero id='hero' size={size} />
         <WeddingDay id='wedding-day' size={size} />
+        <Ceremony id='ceremony' size={size} />
+        <Dinner id='dinner' size={size} />
+        <Accommodation id='accommodation' size={size} />
+        <Video id='video'/>
       </DocumentMeta>
     )
   }

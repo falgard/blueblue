@@ -18,7 +18,6 @@ export default class WeddingDay extends React.Component {
   }
 
   handleWaypointEnter() {
-    console.log('waypoint - weddingday')
     this.setState({
       animate: true
     })
@@ -32,8 +31,6 @@ export default class WeddingDay extends React.Component {
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
-      [mainStyles.caption]: true,
-      [styles.caption]: true,
       'animated': animate,
       'fadeInUp': animate
     })
