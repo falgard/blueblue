@@ -43,10 +43,10 @@ export default class WeddingDay extends React.Component {
       } else {
         return (
           <div className={styles.countdown}>
-            <span>{days}<small>days</small></span>
-            <span>{hours}<small>hours</small></span>
-            <span>{minutes}<small>minutes</small></span>
-            <span>{seconds}<small>seconds</small></span>
+            <span>{days}<small>dagar</small></span>
+            <span>{hours}<small>timmar</small></span>
+            <span>{minutes}<small>minuter</small></span>
+            <span>{seconds}<small>sekunder</small></span>
           </div>
         );
       }

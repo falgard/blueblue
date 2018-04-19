@@ -29,7 +29,7 @@ export default class Video extends React.Component {
   render() {
     const imageClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_varvet1]: true
+      [mainStyles.bg__img_varvet2]: true
     })
     
     return (

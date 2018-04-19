@@ -88,6 +88,10 @@ a {
 	}
 }
 
+strong {
+  font-weight: bold;
+}
+
 // p {
 // 	margin-bottom: 15px;
 // 	line-height: 1.6;
@@ -141,8 +145,7 @@ a {
     }
     
     &_hedvig {
-      background-image: url("../static/images/hedvig.jpg");
-      height: 400px;
+      background-image: url("../static/images/hedvig2.jpg");
     }
   }
 }
@@ -182,7 +185,7 @@ a {
   height: auto;
   padding: 200px 0;
   background-color:white;
-  text-align: justify;
+  text-align: center;
 
   p {
     width: 800px;
