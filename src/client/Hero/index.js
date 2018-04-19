@@ -61,7 +61,8 @@ export default class Hero extends React.Component {
             Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. 
             Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, 
             in in neque risus.</p><br/>
-          <strong>28 Juli, 2018 — Östermalm/Vaxholm</strong>
+          <img className={styles.ring} src="images/ring.svg"/><br/>
+          <strong>28e Juli 2018 Östermalm/Vaxholm</strong>
           
         </div>
       </div>

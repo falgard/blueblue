@@ -15,6 +15,7 @@ import Ceremony from './Ceremony'
 import Dinner from './Dinner'
 import Accommodation from './Accommodation'
 import Video from './Video'
+import Footer from './Footer'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -71,6 +72,7 @@ export default class App extends React.Component {
         <Dinner id='dinner' size={size} />
         <Accommodation id='accommodation' size={size} />
         <Video id='video'/>
+        <Footer id='footer' size={size}/>
       </DocumentMeta>
     )
   }
