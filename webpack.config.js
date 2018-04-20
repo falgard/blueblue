@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let pathsToClean = [
   'dist'
@@ -47,11 +48,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'react-svg-loader'
-          }
-        ]
+        loader: 'react-svg-loader'
       }
     ]
   },
@@ -68,6 +65,10 @@ module.exports = {
     extractSass,
     new HtmlWebpackPlugin({
       template: 'src/templates/index.ejs'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/static/images/gallery', to: 'images/gallery' },
+      { from: 'src/static/images/icons', to: 'images/icons' },
+    ])
   ]
 }

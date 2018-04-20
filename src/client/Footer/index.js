@@ -36,7 +36,7 @@ export default class Footer extends React.Component {
         <div className={styles.info}>
             <p>
                 <a href="mailto:mikael.falgard@gmail.com">mikael.falgard@gmail.com</a> | 0738370005
-                <img className={styles.ring} src="images/ring.svg"/> 
+                <img className={styles.ring} src="images/icons/ring.svg"/> 
                 <a href="mailto:cecilia.holmgren@hotmail.com">cecilia.holmgren@hotmail.com</a> | 0704673134</p>
         </div>
     </section>
