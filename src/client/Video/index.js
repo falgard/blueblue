@@ -40,9 +40,9 @@ export default class Video extends React.Component {
         </div>
       </div>
 
-      <div className={styles.gallery}>
+      {/* <div className={styles.gallery}>
         <Gallery photos={PHOTO_SET} margin={2} />
-      </div>
+      </div> */}
 
       <div className={styles.holder}>
         <iframe frameBorder="0" scrolling="0" height="100%" width="100%" src="https://diftv.solidtango.com/widgets/embed/dw79ss3f" allowFullScreen></iframe>

@@ -4,10 +4,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const extractSass = new ExtractTextPlugin('style.[chunkhash].css', {
-  allChunks: false
-})
-
 let pathsToClean = [
   'dist'
 ]
