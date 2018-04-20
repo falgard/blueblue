@@ -1,9 +1,7 @@
-var webpack = require('webpack');
-
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
   entry: [
     './src/index.js',
     'webpack-dev-server/client?http://0.0.0.0:8081',

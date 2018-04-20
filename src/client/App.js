@@ -43,7 +43,6 @@ export default class App extends React.Component {
   }
 
   handleResize() {
-    console.log('looool')
     clearTimeout(this.resize)
     this.resize = setTimeout(() => {
       const width = window.innerWidth

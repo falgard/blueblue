@@ -26,7 +26,7 @@ export default class Hero extends React.Component {
   render() {
     const heroClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_varvet2]: true,
+      [styles.bg__img_varvet2]: true,
     })
 
     const animationClasses = classNames({
