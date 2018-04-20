@@ -1,21 +1,21 @@
 version: 0.2
 
-phases:
-  pre_build:
-    commands:
-      - "echo Logging in to Amazon ECR..."
-      - "eval $(aws ecr get-login --no-include-email | sed 's|https://||')"
-      # - "aws ecr get-login --no-include-email --region eu-west-1"
+environment_variables:
+  plaintext:
+    BUCKET: "blueblue"
 
+phases:
+  install:
+    commands:
+      - "echo Installing dependencies..."
+      - npm install
   build:
     commands:
       - "echo Build started on `date`"
-      - "echo Building the Docker image..."
-      - "docker build -t blueblue ."
-      - "docker tag blueblue:latest 414838389962.dkr.ecr.eu-west-1.amazonaws.com/blueblue:latest"
+      - npm run build
+      - "echo Build completed on `date`"
 
   post_build:
     commands:
-      - "echo Build completed on `date`"
-      - "echo Pushing the Docker image..."
-      - "docker push 414838389962.dkr.ecr.eu-west-1.amazonaws.com/blueblue:latest"
+      - "echo Deploying site to prod"
+      - aws s3 sync --delete dist s3://$BUCKET --cache-control max-age=3600
