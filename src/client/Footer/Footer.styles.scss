@@ -1,0 +1,32 @@
+.caption {
+  top: 70%;
+}
+
+.info {
+  height: auto;
+  padding: 50px 0;
+  background-color:white;
+  text-align: center;
+
+  h2 {
+    color: #000;
+  }
+
+  p {
+    width: 800px;
+    margin: 0 auto;
+    color: #01248B;
+  }
+
+  .caption {
+    position: relative;
+  }
+}
+
+.ring {
+  width: 30px;
+  height: 30px;
+  margin: 0 20px;
+  top: 8px;
+  position: relative;
+}

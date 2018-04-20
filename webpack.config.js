@@ -16,6 +16,10 @@ let cleanOptions = {
   verbose: true
 }
 
+const extractSass = new ExtractTextPlugin('style.[chunkhash].css', {
+  allChunks: false
+})
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -25,7 +29,7 @@ module.exports = {
   module: {
       loaders: [
         {
-            test: /\.js$/,
+            test: /\.js|svg$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
@@ -35,28 +39,36 @@ module.exports = {
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract(`css-loader?minimize&modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
-        },
-        {
-          test: /\.(jpe?g|png|gif)$/i,
-          loader: 'responsive-loader',
-          options: {
-             adapter: require('responsive-loader/sharp'),
-             limit: 8192,
-             name: 'images/[name].[ext]'
-          }
-        },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: 'react-svg-loader'
-            }
-          ]
+      },
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+           adapter: require('responsive-loader/sharp'),
+           limit: 8192,
+           name: 'images/[name].[ext]'
         }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'react-svg-loader'
+          }
+        ]
+      }
     ]
+  },
+  stats: {
+    colors: true
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
     extractSass,
     new HtmlWebpackPlugin({
       template: 'src/templates/index.ejs'

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700');
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script');
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,600');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -21,17 +22,14 @@ ol, ul {
 body, html {
   height: 100%;
   margin: 0;
+  position: relative;
   font: 400 15px/1.8 "Lato", sans-serif;
   font-family: 'Raleway', sans-serif;
-  /* font-family: "Source Sans Pro", Arial, sans-serif; */
   font-weight: 400;
   font-size: 18px;
   line-height: 1.8;
   background: #fff;
   color: #000;
-  height: 100%;
-  position: relative;
-  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,36 +38,46 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-h1 {
-	font-size: 40px;
-	font-weight: bold;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-h2 {
-	font-size: 25px;
-	position: relative;
-
-	&:after {
-		content: '';
-    border-bottom: 3px solid #333;
-    width: 35%;
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    right: 0;
-    margin: auto;
-	}
-}
-
 h3 {
   letter-spacing: 5px;
   text-transform: uppercase;
   font: 20px "Lato", sans-serif;
   color: #111;
 }
+
+// section, div {
+//   height: 100%;
+// }
+
+section {
+  .holder div {
+    height: initial;
+  }
+}
+
+// h1 {
+// 	font-size: 40px;
+// 	font-weight: bold;
+// 	letter-spacing: 2px;
+// 	text-transform: uppercase;
+// 	text-align: center;
+// }
+
+// h2 {
+// 	font-size: 25px;
+// 	position: relative;
+
+// 	&:after {
+// 		content: '';
+//     border-bottom: 3px solid #333;
+//     width: 35%;
+//     position: absolute;
+//     bottom: -15px;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+// 	}
+// }
 
 a {
 	text-decoration: none;
@@ -80,97 +88,70 @@ a {
 	}
 }
 
-p {
-	margin-bottom: 15px;
-	line-height: 1.6;
+strong {
+  font-weight: bold;
 }
 
-button {
-	cursor: pointer;
-	background: none;
-}
+// p {
+// 	margin-bottom: 15px;
+// 	line-height: 1.6;
+// }
 
-em {
-  font-style: italic;
-}
+// button {
+// 	cursor: pointer;
+// 	background: none;
+// }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-      background-attachment: scroll;
+// em {
+//   font-style: italic;
+// }
+
+// /* Turn off parallax scrolling for tablets and phones */
+// @media only screen and (max-device-width: 1024px) {
+//   .bgimg {
+//       background-attachment: scroll;
+//   }
+// }
+
+.bg {
+  &__gradient {
+    background-image: linear-gradient(120deg, #89f7fe 0%, #4676fa 100%);
+  }
+
+  &__img {
+    position: relative;
+    height: 800px;
+    /* opacity: 0.65; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    &_varvet1 {
+      background-image: url("../static/images/varvet.jpg");
+    }
+  
+    &_varvet2 {
+      background-image: url("../static/images/varvet2.jpg");
+    }
+
+    &_varvet3 {
+      background-image: url("../static/images/varvet3.jpg");
+    }
+    
+    &_kastellet {
+      background-image: url("../static/images/kastellet.jpg");
+      height: 400px;
+    }
+    
+    &_hedvig {
+      background-image: url("../static/images/hedvig2.jpg");
+    }
   }
 }
 
-.bgimg {
-  position: relative;
-  /* opacity: 0.65; */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-}
-
-.bggradient {
-  background-image: linear-gradient(120deg, #89f7fe 0%, #4676fa 100%);
-}
-
-.info {
-  padding: 200px 0;
-  background-color:white;
-  text-align: justify;
-}
-
-.info p {
-  width: 800px;
-  margin: 0 auto;
-}
-
-.overlay {
-  position: absolute !important;
-  width: 100%;
-  height: 90%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.bgimg-varvet-1 {
-  background-image: url("/images/varvet.jpg");
-  min-height: 100%;
-}
-
-.bgimg-varvet-2 {
-  background-image: url("/images/varvet2.jpg");
-  height: 90%;
-}
-
-.bgimg-varvet-3 {
-  background-image: url("/images/varvet3.jpg");
-  min-height: 100%;
-}
-
-.bgimg-kastellet {
-  background-image: url("/images/kastellet.jpg");
-  min-height: 400px;
-}
-
-.bgimg-hedvig {
-  background-image: url("/images/hedvig.jpg");
-  min-height: 400px;
-}
-
-.img-portrait {
-  display: block;
-  width: 200px;
-  max-width: 100%;
-  height: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
+.holder {
+  height: 400px;
 }
 
 .caption {
@@ -178,15 +159,36 @@ em {
   left: 0;
   top: 50%;
   width: 100%;
+  height: auto;
   text-align: center;
   color: #000;
   z-index: 2;
+
+  p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  
+  span.border {
+    background-image: linear-gradient(120deg, #89f7fe 0%, #4676fa 100%);
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
 }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
+.info {
+  position: relative;
+  height: auto;
+  padding: 200px 0;
+  background-color:white;
+  text-align: center;
+
+  p {
+    width: 800px;
+    margin: 0 auto;
+  }
 }
