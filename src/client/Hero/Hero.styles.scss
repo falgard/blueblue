@@ -23,9 +23,10 @@ h2 {
     background: rgba(0, 0, 0, 0.6);
   }
 
-  &_varvet2 {
-    height: 800px;
-  }
+  &__img_varvet2 {
+      height: 800px;
+      background-image: url("../../static/images/varvet2.jpg");
+    }
 }
 
 .caption {
