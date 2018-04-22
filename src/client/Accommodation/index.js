@@ -47,6 +47,7 @@ export default class Accommodation extends React.Component {
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={mainStyles.info}>
+          <img className={mainStyles.icon} src="images/icons/placeholder.svg"/>
           <p>Vi har bokat rum åt alla på kastellet och bokat transport från varvet när festen är slut. Säg till i fall ni inte vill ha ett rum. (Betalning sker på plats 1500kr/dubbelrum).</p>
           </div>
         </div>

@@ -17,7 +17,6 @@ export default class Hero extends React.Component {
   }
 
   handleWaypointEnter() {
-    console.log('waypoint - hero')
     this.setState({
       animate: true
     })
@@ -61,7 +60,7 @@ export default class Hero extends React.Component {
             Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. 
             Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, 
             in in neque risus.</p><br/>
-          <img className={styles.ring} src="images/icons/ring.svg"/><br/>
+          <img className={styles.ring} src="images/icons/couple.svg"/><br/>
           <strong>28e Juli 2018 Östermalm/Vaxholm</strong>
           
         </div>

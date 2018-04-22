@@ -47,6 +47,7 @@ export default class Ceremony extends React.Component {
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={mainStyles.info}>
+          <img className={mainStyles.icon} src="images/icons/ring.svg"/>
           <p>Sker i hedvig eleonora kyrka kl 13.00 på storgatan.</p>
           </div>
         </div>
