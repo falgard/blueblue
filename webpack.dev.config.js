@@ -1,5 +1,11 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extractSass = new ExtractTextPlugin('style.[chunkhash].css', {
+  allChunks: false,
+  disable: true
+})
 
 module.exports = {
   entry: [
@@ -23,6 +29,7 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    extractSass,
     new HtmlWebpackPlugin({
       template: 'src/templates/index.ejs'
     })
@@ -40,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'css-loader!loader: "css-loader?modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]"!sass-loader'
+        loader: ExtractTextPlugin.extract(`css-loader?modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
         },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -50,14 +57,6 @@ module.exports = {
            limit: 8192,
            name: 'images/[name].[ext]'
         }
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'react-svg-loader'
-          }
-        ]
       }
     ]
   }
