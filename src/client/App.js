@@ -61,7 +61,8 @@ export default class App extends React.Component {
   StartPage(size) {
     const meta = {
       title: 'Blå blå är kärleken - Cissi & Micke',
-      description: 'Blå blå är kärleken'
+      description: 'Blå blå är kärleken',
+      canonical: 'https://loveis.blue'
     }
 
     return (
