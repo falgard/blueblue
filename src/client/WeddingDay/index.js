@@ -55,10 +55,7 @@ export default class WeddingDay extends React.Component {
     return (
       <section id={this.props.id}>
         <div className={imageClasses}>
-          <div className={animateBoxWaypoint}>
-            <Waypoint onEnter={this.handleWaypointEnter} />
             <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
-          </div>
         </div>
       </section>
     )
