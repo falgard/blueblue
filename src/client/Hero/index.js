@@ -55,12 +55,8 @@ export default class Hero extends React.Component {
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <h2>Vi gifter oss!</h2>
-          <p>Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, 
-            blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. 
-            Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. 
-            Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, 
-            in in neque risus.</p><br/>
-          <img className={styles.ring} src="images/icons/couple.svg"/><br/>
+          <p>Vi är jätte glada att ni vill komma på vårt bröllopskalas och såklart hedra själva vigselakten med er närvaro. Det kommer att bjudas på riktigt fint sommarväder i skärgårdsmiljö.</p><br/>
+          <img className={styles.couple} src="images/icons/couple.svg"/><br/>
           <strong>28e Juli 2018 Östermalm/Vaxholm</strong>
           
         </div>

@@ -37,6 +37,7 @@ export default class Accommodation extends React.Component {
   
     return (
       <section id={this.props.id}>
+      <div className={styles.bg__overlay}></div>
       <div className={imageClasses}>
         <div className={mainStyles.caption}>
           <p>Boende</p>
@@ -48,7 +49,10 @@ export default class Accommodation extends React.Component {
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={mainStyles.info}>
           <img className={mainStyles.icon} src="images/icons/placeholder.svg"/>
-          <p>Vi har bokat rum åt alla på kastellet och bokat transport från varvet när festen är slut. Säg till i fall ni inte vill ha ett rum. (Betalning sker på plats 1500kr/dubbelrum).</p>
+          <p>Vi har bokat rum på kastellet och lånat några gästhus på ön, så vi hoppas att alla har möjlighet att stanna över natten. Säg till så snart som möjligt i fall ni har andra planer. 
+          <br /><br />Båt-taxi efter kalaset från varvet till kastellet är bokad.
+          <br />Från Vaxholm tar man sig sedan dagen efter på egen hand mha båt eller buss.
+          <br />Betalning sker på plats, ~1600kr/dubbelrum inkl frukost.</p>
           </div>
         </div>
       </div>

@@ -32,12 +32,12 @@ export default class Gallery extends React.Component {
       [mainStyles.bg__img_varvet2]: true
     })
 
-    const photos = PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0, 8);
+    const photos = PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0, 9);
     
     return (
       <section id={this.props.id}>
       <div className={styles.gallery}>
-        <PhotoGallery photos={photos} margin={2} columns={4} />
+        <PhotoGallery photos={photos} margin={2} columns={5} />
       </div>
     </section>
     )
@@ -98,7 +98,7 @@ const PHOTO_SET = [
   {
     src: 'images/gallery/13.jpg',
     width: 3,
-    height: 5
+    height: 4
   },
   {
     src: 'images/gallery/15.jpg',
