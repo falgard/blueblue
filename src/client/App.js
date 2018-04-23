@@ -16,6 +16,7 @@ import Dinner from './Dinner'
 import Accommodation from './Accommodation'
 import Video from './Video'
 import Footer from './Footer'
+import Gallery from './Gallery'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -43,7 +44,6 @@ export default class App extends React.Component {
   }
 
   handleResize() {
-    console.log('looool')
     clearTimeout(this.resize)
     this.resize = setTimeout(() => {
       const width = window.innerWidth
@@ -67,6 +67,7 @@ export default class App extends React.Component {
     return (
       <DocumentMeta {...meta}>
         <Hero id='hero' size={size} />
+        <Gallery id='gallery' size={size} />
         <WeddingDay id='wedding-day' size={size} />
         <Ceremony id='ceremony' size={size} />
         <Dinner id='dinner' size={size} />

@@ -185,7 +185,7 @@ strong {
 .info {
   position: relative;
   height: auto;
-  padding: 200px 0;
+  padding: 130px 0;
   background-color:white;
   text-align: center;
 
@@ -193,4 +193,12 @@ strong {
     width: 800px;
     margin: 0 auto;
   }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 20px 40px 0;
+  top: 8px;
+  position: relative;
 }

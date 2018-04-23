@@ -24,26 +24,26 @@ module.exports = {
     filename: 'index.[chunkhash].js'
   },
   module: {
-      loaders: [
-        {
-            test: /\.js|svg$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-              presets: ['es2015', 'react']
-            }
-        },
-        {
-          test: /\.scss$/,
-          loader: ExtractTextPlugin.extract(`css-loader?minimize&modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
+    loaders: [
+      {
+          test: /\.js|svg$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          query: {
+            presets: ['es2015', 'react']
+          }
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(`css-loader?modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
       },
       {
         test: /\.(jpe?g|png)$/i,
         loader: 'responsive-loader',
         options: {
-           adapter: require('responsive-loader/sharp'),
-           limit: 8192,
-           name: 'images/[name].[ext]'
+          adapter: require('responsive-loader/sharp'),
+          limit: 8192,
+          name: 'images/[name].[ext]'
         }
       },
       {

@@ -47,6 +47,7 @@ export default class Dinner extends React.Component {
       <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={mainStyles.info}>
+            <img className={mainStyles.icon} src="images/icons/toast.svg"/>
             <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. Lise Wetzel och Christofer Holmgren är toastmasters, meddela i fall ni vill uppträda.</p>
           </div>
         </div>

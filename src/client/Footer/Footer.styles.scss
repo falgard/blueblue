@@ -4,29 +4,30 @@
 
 .info {
   height: auto;
-  padding: 50px 0;
+  padding: 50px;
   background-color:white;
   text-align: center;
-
-  h2 {
-    color: #000;
-  }
-
-  p {
-    width: 800px;
-    margin: 0 auto;
-    color: #01248B;
-  }
+  letter-spacing: 2px;
+  margin: 0 auto;
+  color: #01248B;
 
   .caption {
     position: relative;
   }
 }
 
-.ring {
-  width: 30px;
-  height: 30px;
+.couple, .date {
+  width: 40px;
+  height: 40px;
   margin: 0 20px;
   top: 8px;
   position: relative;
+  float: left;
+}
+
+.grid {
+  display: inline-block;
+  width: 50%;
+  max-width: 320px;
+  text-align: left;
 }

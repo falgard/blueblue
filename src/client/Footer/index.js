@@ -34,10 +34,16 @@ export default class Footer extends React.Component {
     return (
       <section id={this.props.id}>    
         <div className={styles.info}>
-            <p>
-                <a href="mailto:mikael.falgard@gmail.com">mikael.falgard@gmail.com</a> | 0738370005
-                <img className={styles.ring} src="images/icons/ring.svg"/> 
-                <a href="mailto:cecilia.holmgren@hotmail.com">cecilia.holmgren@hotmail.com</a> | 0704673134</p>
+            <div className={styles.grid}>
+              <img className={styles.date} src="images/icons/wedding-day.svg"/> 
+              <p>28e Juli 2018 13:00<br />
+              Hedvig Eleonora Kyrka</p>
+            </div>
+            <div className={styles.grid}>
+              <img className={styles.couple} src="images/icons/couple.svg"/>
+              <p>Cissi (0704673134) <br />
+              Micke (0738370005) </p>
+            </div>
         </div>
     </section>
     )
