@@ -38,7 +38,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(`css-loader?modules&importLoaders=2&localIdentName=[name]_[local]__[hash:base64:5]!sass-loader`)
       },
       {
-        test: /\.(jpe?g|png)$/i,
+        test: /\.(jpe?g|JPG|png|gif)$/i,
         loader: 'responsive-loader',
         options: {
           adapter: require('responsive-loader/sharp'),
