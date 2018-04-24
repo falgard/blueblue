@@ -14,7 +14,8 @@ export default class Gallery extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
     this.handleResize = this.handleResize.bind(this)
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -32,12 +33,14 @@ export default class Gallery extends React.Component {
       [mainStyles.bg__img_varvet2]: true
     })
 
-    const photos = PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0, 9);
+    const nrOfColumns = this.state.small ? 2 : 5;
+    const nrOfPhotos = this.state.small ? 6 : 9;
+    const photos = PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0,nrOfPhotos);
     
     return (
       <section id={this.props.id}>
       <div className={styles.gallery}>
-        <PhotoGallery photos={photos} margin={2} columns={5} />
+        <PhotoGallery photos={photos} margin={2} columns={nrOfColumns} />
       </div>
     </section>
     )

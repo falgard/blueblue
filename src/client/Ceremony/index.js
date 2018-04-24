@@ -13,7 +13,8 @@ export default class Ceremony extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -26,13 +27,21 @@ export default class Ceremony extends React.Component {
   render() {
     const imageClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_hedvig]: true
+      [mainStyles.bg__img_hedvig]: true,
+      [mainStyles.small]: this.state.small,
+      [styles.small]: this.state.small
     })
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
+      [mainStyles.small]: this.state.small,
       'animated': animate,
       'fadeInUp': animate
+    })
+
+    const infobox = classNames({
+      [mainStyles.small]: this.state.small,
+      [mainStyles.info]: true
     })
   
     return (
@@ -40,11 +49,12 @@ export default class Ceremony extends React.Component {
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
-          <div className={mainStyles.info}>
+          <div className={infobox}>
           <img className={mainStyles.icon} src="images/icons/heart.svg"/>
-          <p><strong>Klädsel </strong>Kavaj, lederhosen eller annan högtidsdräkt. 
+          <p><strong>Klädsel</strong><br />Kavaj, lederhosen eller annan högtidsdräkt. 
           <br />Det finns absolut möjlighet till bastu och bad så det är lika bra att ta med baddräkt också. 
-          <br /> <br /> Barn är såklart inte förbjudna men innebär viss logistik, kontakta oss om ni inte har möjlighet att lösa barnvakt. 
+          <br /> <br /> 
+          <strong>Barn</strong><br />Är såklart inte förbjudna men innebär viss logistik, kontakta oss om ni inte har möjlighet att lösa barnvakt. 
           </p>
           </div>
         </div>
@@ -59,7 +69,7 @@ export default class Ceremony extends React.Component {
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
-          <div className={mainStyles.info}>
+          <div className={infobox}>
           <img className={mainStyles.icon} src="images/icons/ring.svg"/>
           <p>Sker i <a href="https://goo.gl/maps/2QR8xvJehyt" target="_blank">Hedvig Eleonora kyrka</a> kl 13.00 på Storgatan.</p>
           </div>

@@ -13,7 +13,8 @@ export default class WeddingDay extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -26,11 +27,14 @@ export default class WeddingDay extends React.Component {
   render() {
     const imageClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_varvet3]: true
+      [mainStyles.bg__img_varvet3]: true,
+      [mainStyles.small]: this.state.small,
+      [styles.small]: this.state.small
     })
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
+      [styles.small]: this.state.small,
       'animated': animate,
       'fadeInUp': animate
     })

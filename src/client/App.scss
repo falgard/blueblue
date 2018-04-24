@@ -64,7 +64,7 @@ a {
 
 strong {
   font-weight: bold;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
 }
 
 .bg {
@@ -80,19 +80,35 @@ strong {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &.small {
+      height: 700px;
+    }
   
     &_varvet1 {
       background-image: url("../static/images/varvet.jpg");
+
+      &.small {
+        background-position: right;
+      }
     }
   
     &_varvet2 {
       background-image: url("../static/images/varvet2.jpg");
       height: 1000px;
+
+      &.small {
+        height: 700px;
+      }
     }
 
     &_varvet3 {
       background-image: url("../static/images/varvet3.jpg");
       height: 1000px;
+
+      &.small {
+        height: 700px;
+      }
     }
     
     &_kastellet {
@@ -130,6 +146,14 @@ strong {
     font-size: 25px;
     letter-spacing: 10px;
   }
+
+  &.small {
+    span.border {
+      background-image: none;
+      font-size: 16px;
+    }
+  }
+
 }
 
 .info {
@@ -140,8 +164,17 @@ strong {
   text-align: center;
 
   p {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
+  }
+
+  &.small {
+    margin: 90px 0 140px 0;
+    p {
+      font-size: 16px;
+      padding: 0 30px;
+    }
   }
 }
 

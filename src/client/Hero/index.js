@@ -12,7 +12,8 @@ export default class Hero extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -26,32 +27,40 @@ export default class Hero extends React.Component {
     const heroClasses = classNames({
       [mainStyles.bg__img]: true,
       [styles.bg__img_varvet2]: true,
+      [styles.small]: this.state.small
     })
 
     const animationClasses = classNames({
       [mainStyles.caption]: true,
       [styles.caption]: true,
+      [styles.small]: this.state.small,
       'animated': true,
       'fadeInUp': true
     })
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
+      [styles.small]: this.state.small,
       'animated': animate,
       'fadeInUp': animate
     })
 
+    const infobox = classNames({
+      [styles.small]: this.state.small,
+      [styles.info]: true
+    })
+
   return (
     <section id={this.props.id}>
-      <div className={styles.bg__overlay}></div>
       <div className={heroClasses}>
+        <div className={styles.bg__overlay}></div>
           <div className={animationClasses}>
             <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
             <h2>Cissi &amp; Micke</h2>
             <p>07.28.2018</p>
           </div>
       </div>
-      <div className={styles.info}>
+      <div className={infobox}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <h2>Vi gifter oss!</h2>
