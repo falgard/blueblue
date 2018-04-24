@@ -13,7 +13,8 @@ export default class Dinner extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -26,13 +27,20 @@ export default class Dinner extends React.Component {
   render() {
     const imageClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_varvet1]: true
+      [mainStyles.bg__img_varvet1]: true,
+      [mainStyles.small]: this.state.small,
     })
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
+      [mainStyles.small]: this.state.small,
       'animated': animate,
       'fadeInUp': animate
+    })
+
+    const infobox = classNames({
+      [mainStyles.small]: this.state.small,
+      [mainStyles.info]: true
     })
   
     return (
@@ -46,7 +54,7 @@ export default class Dinner extends React.Component {
       <div className={mainStyles.holder}>
       <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
-          <div className={mainStyles.info}>
+          <div className={infobox}>
             <img className={mainStyles.icon} src="images/icons/toast.svg"/>
             <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. <a href="mailto:lise">Lise Wetzel</a> och <a href="mailto:chris">Christofer Holmgren</a> är toastmasters, meddela dom i fall ni vill uppträda och eventuella allergier/vegetarianer.</p>
           </div>

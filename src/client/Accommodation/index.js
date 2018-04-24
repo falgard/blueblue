@@ -13,7 +13,8 @@ export default class Accommodation extends React.Component {
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
-      animate: false
+      animate: false,
+      small: props.size.small
     }
   }
 
@@ -31,8 +32,14 @@ export default class Accommodation extends React.Component {
 
     const animate = this.state.animate
     const animateBoxWaypoint = classNames({
+      [mainStyles.small]: this.state.small,
       'animated': animate,
       'fadeInUp': animate
+    })
+
+    const infobox = classNames({
+      [mainStyles.small]: this.state.small,
+      [mainStyles.info]: true
     })
   
     return (
@@ -47,7 +54,7 @@ export default class Accommodation extends React.Component {
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
-          <div className={mainStyles.info}>
+          <div className={infobox}>
           <img className={mainStyles.icon} src="images/icons/placeholder.svg"/>
           <p>Vi har bokat rum på kastellet och lånat några gästhus på ön, så vi hoppas att alla har möjlighet att stanna över natten. Säg till så snart som möjligt i fall ni har andra planer. 
           <br /><br />Båt-taxi efter kalaset från varvet till kastellet är bokad.

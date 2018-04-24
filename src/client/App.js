@@ -73,7 +73,7 @@ export default class App extends React.Component {
         <Ceremony id='ceremony' size={size} />
         <Dinner id='dinner' size={size} />
         <Accommodation id='accommodation' size={size} />
-        <Video id='video'/>
+        <Video id='video' size={size}/>
         <Footer id='footer' size={size}/>
       </DocumentMeta>
     )
