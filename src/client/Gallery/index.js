@@ -101,6 +101,11 @@ const PHOTO_SET = [
     height: 4
   },
   {
+    src: 'images/gallery/14.jpg',
+    width: 3,
+    height: 4
+  },
+  {
     src: 'images/gallery/15.jpg',
     width: 4,
     height: 3
