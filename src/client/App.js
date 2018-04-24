@@ -62,7 +62,13 @@ export default class App extends React.Component {
     const meta = {
       title: 'Blå blå är kärleken - Cissi & Micke',
       description: 'Blå blå är kärleken',
-      canonical: 'https://loveis.blue'
+      canonical: 'https://loveis.blue',
+      link: {
+        rel: { icon: '/favicon.ico' },
+      },
+      robots: {
+        content: "NOINDEX, NOFOLLOW"
+      }
     }
 
     return (
