@@ -7,7 +7,6 @@ import {
   Link
 } from 'react-router-dom'
 import DocumentMeta from 'react-document-meta'
-import Favicon from 'react-favicon';
 
 import ScrollToTop from './Utils/ScrollToTop'
 import Hero from './Hero'
@@ -74,7 +73,6 @@ export default class App extends React.Component {
 
     return (
       <DocumentMeta {...meta}>
-       <Favicon url="/favicon.ico" />
         <Hero id='hero' size={size} />
         <Gallery id='gallery' size={size} />
         <WeddingDay id='wedding-day' size={size} />
