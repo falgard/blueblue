@@ -83,6 +83,7 @@ strong {
 
     &.small {
       height: 700px;
+      background-attachment: scroll;
     }
   
     &_varvet1 {
@@ -96,24 +97,20 @@ strong {
     &_varvet2 {
       background-image: url("../static/images/varvet2.jpg");
       height: 1000px;
-
-      &.small {
-        height: 700px;
-      }
     }
 
     &_varvet3 {
       background-image: url("../static/images/varvet3.jpg");
       height: 1000px;
-
-      &.small {
-        height: 700px;
-      }
     }
     
     &_kastellet {
       background-image: url("../static/images/kastellet.jpg");
       height: 400px;
+
+      &.small {
+        height: 400px;
+      }
     }
     
     &_hedvig {

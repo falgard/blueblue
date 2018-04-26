@@ -26,7 +26,8 @@ export default class Accommodation extends React.Component {
   render() {
     const imageClasses = classNames({
       [mainStyles.bg__img]: true,
-      [mainStyles.bg__img_kastellet]: true
+      [mainStyles.bg__img_kastellet]: true,
+      [mainStyles.small]: this.state.small
     })
 
     const animate = this.state.animate
