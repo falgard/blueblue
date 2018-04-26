@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
 import Waypoint from 'react-waypoint'
+import { Parallax, Background } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './Ceremony.styles.scss'
@@ -60,11 +60,12 @@ export default class Ceremony extends React.Component {
         </div>
       </div>
 
-      <div className={imageClasses}>
-        <div className={mainStyles.caption}>
+      <Parallax bgImage={'../../images/hedvig.jpg'} strength={200}>
+      <div className={mainStyles.caption}>
           <p>Vigsel</p>
         </div>
-      </div>
+      <div style={{ height: '700px' }} />
+      </Parallax>
 
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>
@@ -75,6 +76,9 @@ export default class Ceremony extends React.Component {
           </div>
         </div>
       </div>
+
+      <div>
+  </div>
     </section>
     )
   }

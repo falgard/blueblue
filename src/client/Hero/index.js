@@ -27,12 +27,14 @@ export default class Hero extends React.Component {
     const heroClasses = classNames({
       [mainStyles.bg__img]: true,
       [styles.bg__img_varvet2]: true,
+      [mainStyles.small]: this.state.small,
       [styles.small]: this.state.small
     })
 
     const animationClasses = classNames({
       [mainStyles.caption]: true,
       [styles.caption]: true,
+      [mainStyles.small]: this.state.small,
       [styles.small]: this.state.small,
       'animated': true,
       'fadeInUp': true

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
 import Waypoint from 'react-waypoint'
+import { Parallax, Background } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 //import styles from './Dinner.styles.scss'
@@ -45,11 +45,12 @@ export default class Dinner extends React.Component {
   
     return (
       <section id={this.props.id}>
-        <div className={imageClasses}>
-          <div className={mainStyles.caption}>
-            <p>Middag</p>
-          </div>
+      <Parallax bgImage={'../../images/varvet.jpg'} strength={200}>
+      <div className={mainStyles.caption}>
+          <p>Middag</p>
         </div>
+      <div style={{ height: '700px' }} />
+      </Parallax>
 
       <div className={mainStyles.holder}>
       <div className={animateBoxWaypoint}>

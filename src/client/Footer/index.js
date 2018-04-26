@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
-import Waypoint from 'react-waypoint'
 
 import mainStyles from '../App.scss'
 import styles from './Footer.styles.scss'
@@ -11,15 +9,12 @@ export default class Footer extends React.Component {
   constructor(props) {
     super(props)    
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
-    this.handleResize = this.handleResize.bind(this)
     this.state = {
       animate: false,
       small: props.size.small
     }
   }
 
-  handleResize() {
-  }
   handleWaypointEnter() {
     this.setState({
       animate: true

@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
-import Waypoint from 'react-waypoint'
 import PhotoGallery from 'react-photo-gallery';
 
 import mainStyles from '../App.scss'
@@ -12,15 +10,12 @@ export default class Gallery extends React.Component {
   constructor(props) {
     super(props)    
     this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
-    this.handleResize = this.handleResize.bind(this)
     this.state = {
       animate: false,
       small: props.size.small
     }
   }
 
-  handleResize() {
-  }
   handleWaypointEnter() {
     this.setState({
       animate: true
@@ -33,19 +28,17 @@ export default class Gallery extends React.Component {
       [mainStyles.bg__img_varvet2]: true
     })
 
-    const nrOfColumns = this.state.small ? 2 : 5;
-    const nrOfPhotos = this.state.small ? 6 : 9;
-    const photos = PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0,nrOfPhotos);
-    
     return (
       <section id={this.props.id}>
       <div className={styles.gallery}>
-        <PhotoGallery photos={photos} margin={2} columns={nrOfColumns} />
+        <PhotoGallery photos={getPhotos(this.state.small)} margin={2} columns={this.state.small ? 2 : 5} />
       </div>
     </section>
     )
   }
 }
+
+const getPhotos = small => PHOTO_SET.sort(() => {return 0.5 - Math.random()}).slice(0, small ? 6 : 9);
 
 const PHOTO_SET = [
   {
