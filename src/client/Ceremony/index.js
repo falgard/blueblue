@@ -60,11 +60,11 @@ export default class Ceremony extends React.Component {
         </div>
       </div>
 
-      <Parallax bgImage={'../../images/hedvig.jpg'} strength={200}>
+      <Parallax bgImage={'../../images/hedvig.jpg'} strength={300}>
       <div className={mainStyles.caption}>
           <p>Vigsel</p>
         </div>
-      <div style={{ height: '700px' }} />
+      <div style={{ height: '1000px' }} />
       </Parallax>
 
       <div className={mainStyles.holder}>
