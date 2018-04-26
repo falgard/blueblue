@@ -1,31 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
-import Waypoint from 'react-waypoint'
-import Gallery from 'react-photo-gallery';
 
 import mainStyles from '../App.scss'
 import styles from './Video.styles.scss'
 
 export default class Video extends React.Component {
   constructor(props) {
-    super(props)    
-    this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
-    this.handleResize = this.handleResize.bind(this)
+    super(props)
     this.state = {
       animate: false,
       small: props.size.small
     }
   }
-
-  handleResize() {
-  }
-  handleWaypointEnter() {
-    this.setState({
-      animate: true
-    })
-  };
 
   render() {
     const imageClasses = classNames({

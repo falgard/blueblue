@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom'
 import DocumentMeta from 'react-document-meta'
 
-import ScrollToTop from './Utils/ScrollToTop'
 import Hero from './Hero'
 import WeddingDay from './WeddingDay'
 import Ceremony from './Ceremony'
@@ -43,7 +42,12 @@ export default class App extends React.Component {
     window.addEventListener('resize', this.handleResize)
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.size.small !== nextState.size.small;
+  }
+
   handleResize() {
+    console.log('handle resize - app')
     clearTimeout(this.resize)
     this.resize = setTimeout(() => {
       const width = window.innerWidth
@@ -88,9 +92,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <ScrollToTop>
           <Route exact path='/' component={() => this.StartPage(this.state.size)} />
-        </ScrollToTop>
       </Router>
     )
   }

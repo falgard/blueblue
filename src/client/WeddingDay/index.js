@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Countdown from 'react-countdown-now';
-import Waypoint from 'react-waypoint'
 
 import mainStyles from '../App.scss'
 import styles from './WeddingDay.styles.scss'
@@ -10,18 +9,11 @@ import styles from './WeddingDay.styles.scss'
 export default class WeddingDay extends React.Component {
   constructor(props) {
     super(props)    
-    this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
       animate: false,
       small: props.size.small
     }
-  }
-
-  handleWaypointEnter() {
-    this.setState({
-      animate: true
-    })
   }
 
   render() {
@@ -32,14 +24,12 @@ export default class WeddingDay extends React.Component {
       [styles.small]: this.state.small
     })
 
-    const animate = this.state.animate
-    const animateBoxWaypoint = classNames({
-      [styles.small]: this.state.small,
-      'animated': animate,
-      'fadeInUp': animate
+    const completeClasses = classNames({
+      [styles.countdown]: true,
+      [styles.complete]: true
     })
   
-    const Completionist = () => <span>Hipp hipp hurra!</span>;
+    const Completionist = () => <div className={completeClasses}><span>Hipp hipp hurra!</span></div>;
   
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
       if (completed) {
