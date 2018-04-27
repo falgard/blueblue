@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Waypoint from 'react-waypoint'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './Accommodation.styles.scss'
@@ -21,6 +22,24 @@ export default class Accommodation extends React.Component {
     this.setState({
       animate: true
     })
+  }
+
+  renderBackground(bgClasses) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/kastellet.jpg'} strength={200} bgHeight={'400px'}>
+        <div className={mainStyles.caption}>
+            <p>Boende</p>
+          </div>
+        <div style={{ height: '400px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+        <div className={mainStyles.caption}>
+          <p>Boende</p>
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -44,12 +63,8 @@ export default class Accommodation extends React.Component {
   
     return (
       <section id={this.props.id}>
-      <div className={styles.bg__overlay}></div>
-      <div className={imageClasses}>
-        <div className={mainStyles.caption}>
-          <p>Boende</p>
-        </div>
-      </div>
+      
+      {this.renderBackground(imageClasses)}
 
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>

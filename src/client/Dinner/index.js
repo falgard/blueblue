@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Waypoint from 'react-waypoint'
-import { Parallax, Background } from 'react-parallax'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 //import styles from './Dinner.styles.scss'
@@ -22,6 +22,24 @@ export default class Dinner extends React.Component {
     this.setState({
       animate: true
     })
+  }
+
+  renderBackground(bgClasses) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/varvet.jpg'} strength={300} bgHeight={'900px'} bgStyle={{left:'-30%'}}>
+        <div className={mainStyles.caption}>
+            <p>Middag</p>
+          </div>
+        <div style={{ height: '700px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+        <div className={mainStyles.caption}>
+          <p>Middag</p>
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -45,12 +63,8 @@ export default class Dinner extends React.Component {
   
     return (
       <section id={this.props.id}>
-      <Parallax bgImage={'../../images/varvet.jpg'} strength={200}>
-      <div className={mainStyles.caption}>
-          <p>Middag</p>
-        </div>
-      <div style={{ height: '700px' }} />
-      </Parallax>
+      
+      {this.renderBackground(imageClasses)}
 
       <div className={mainStyles.holder}>
       <div className={animateBoxWaypoint}>
