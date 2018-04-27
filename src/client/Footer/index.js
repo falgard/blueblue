@@ -47,9 +47,9 @@ export default class Footer extends React.Component {
               Hedvig Eleonora Kyrka</p>
             </div>
             <div className={gridClasses}>
-              <img className={styles.couple} src="images/icons/couple.svg"/>
-              <p>Cissi (0704673134) <br />
-              Micke (0738370005) </p>
+              <img className={styles.couple} src="images/icons/couple2.svg"/>
+              <p>Cissi <a href="tel:+46704673134">0704673134</a> <br />
+              Micke <a href="tel:+46738370005">0738370005</a></p>
             </div>
         </div>
     </section>
