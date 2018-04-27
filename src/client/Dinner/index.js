@@ -27,11 +27,11 @@ export default class Dinner extends React.Component {
   renderBackground(bgClasses) {
     if (this.state.small) {
       return (
-        <Parallax bgImage={'../../images/varvet.jpg'} strength={300} bgHeight={'900px'} bgStyle={{left:'-30%'}}>
+        <Parallax bgImage={'../../images/varvet.jpg'} strength={300} bgHeight={'600px'} bgStyle={{left:'50%'}}>
         <div className={mainStyles.caption}>
             <p>Middag</p>
           </div>
-        <div style={{ height: '700px' }} />
+        <div style={{ height: '600px' }} />
         </Parallax>)
     }
      return (<div className={bgClasses}>
@@ -71,7 +71,7 @@ export default class Dinner extends React.Component {
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={infobox}>
             <img className={mainStyles.icon} src="images/icons/toast.svg"/>
-            <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. <a href="mailto:lise">Lise Wetzel</a> och <a href="mailto:chris">Christofer Holmgren</a> är toastmasters, meddela dom i fall ni vill uppträda och eventuella allergier/vegetarianer.</p>
+            <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. <a href="https://www.facebook.com/lise.falgard" target="_blank">Lise Wetzel</a> och <a href="https://www.facebook.com/christofer.holmgren.1" target="_blank">Christofer Holmgren</a> är toastmasters, meddela dom i fall ni vill uppträda och eventuella allergier/vegetarianer.</p>
           </div>
         </div>
       </div>

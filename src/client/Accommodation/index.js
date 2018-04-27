@@ -27,7 +27,7 @@ export default class Accommodation extends React.Component {
   renderBackground(bgClasses) {
     if (this.state.small) {
       return (
-        <Parallax bgImage={'../../images/kastellet.jpg'} strength={200} bgHeight={'400px'}>
+        <Parallax bgImage={'../../images/kastellet.jpg'} strength={100} bgHeight={'400px'}>
         <div className={mainStyles.caption}>
             <p>Boende</p>
           </div>
@@ -74,7 +74,7 @@ export default class Accommodation extends React.Component {
           <p>Vi har bokat rum på kastellet och lånat några gästhus på ön, så vi hoppas att alla har möjlighet att stanna över natten. Säg till så snart som möjligt i fall ni har andra planer. 
           <br /><br />Båt-taxi efter kalaset från varvet till kastellet är bokad.
           <br />Från Vaxholm tar man sig sedan dagen efter på egen hand mha båt eller buss.
-          <br />Betalning sker på plats, ~1600kr/dubbelrum inkl frukost.</p>
+          <br />(Betalning för kastellet sker på plats, ~1600kr/dubbelrum inkl frukost.)</p>
           </div>
         </div>
       </div>
