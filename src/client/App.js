@@ -7,6 +7,7 @@ import {
   Link
 } from 'react-router-dom'
 import DocumentMeta from 'react-document-meta'
+import ReactGA from 'react-ga';
 
 import Hero from './Hero'
 import WeddingDay from './WeddingDay'
@@ -34,8 +35,8 @@ export default class App extends React.Component {
     }
 
     this.resize = undefined
-    // ReactGA.initialize('UA-106217141-1')
-    // ReactGA.pageview(window.location.pathname)
+    ReactGA.initialize('UA-118266794-1')
+    ReactGA.pageview(window.location.pathname)
   }
 
   componentDidMount() {
@@ -47,7 +48,6 @@ export default class App extends React.Component {
   }
 
   handleResize() {
-    console.log('handle resize - app')
     clearTimeout(this.resize)
     this.resize = setTimeout(() => {
       const width = window.innerWidth

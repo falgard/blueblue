@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Countdown from 'react-countdown-now';
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './WeddingDay.styles.scss'
@@ -14,6 +15,22 @@ export default class WeddingDay extends React.Component {
       animate: false,
       small: props.size.small
     }
+  }
+
+  renderBackground(bgClasses, renderer) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/varvet3.jpg'} strength={300} bgHeight={'700px'} bgStyle={{left:'30%'}}>
+          <div className={styles.small}>
+            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
+          </div>
+          <div style={{ height: '700px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
+        </div>
+    )
   }
 
   render() {
@@ -48,9 +65,7 @@ export default class WeddingDay extends React.Component {
   
     return (
       <section id={this.props.id}>
-        <div className={imageClasses}>
-            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
-        </div>
+        {this.renderBackground(imageClasses, renderer)}
       </section>
     )
   }
