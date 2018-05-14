@@ -32,7 +32,7 @@ export default class Hero extends React.Component {
             <div className={animationClasses}>
               <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
               <h2>Cissi &amp; Micke</h2>
-              <p>07.28.2018</p>
+              <p>28.07.2018</p>
             </div>
           <div style={{ height: '700px' }} />
         </Parallax>)
