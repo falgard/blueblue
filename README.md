@@ -1,4 +1,4 @@
-# blueblue
+# blueblue - love is blue
 
 Wedding site
 
