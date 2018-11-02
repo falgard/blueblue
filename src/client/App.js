@@ -7,8 +7,8 @@ import {
   Link
 } from 'react-router-dom'
 import DocumentMeta from 'react-document-meta'
+import ReactGA from 'react-ga';
 
-import ScrollToTop from './Utils/ScrollToTop'
 import Hero from './Hero'
 import WeddingDay from './WeddingDay'
 import Ceremony from './Ceremony'
@@ -35,12 +35,16 @@ export default class App extends React.Component {
     }
 
     this.resize = undefined
-    // ReactGA.initialize('UA-106217141-1')
-    // ReactGA.pageview(window.location.pathname)
+    ReactGA.initialize('UA-118266794-1')
+    ReactGA.pageview(window.location.pathname)
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.size.small !== nextState.size.small;
   }
 
   handleResize() {
@@ -88,9 +92,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <ScrollToTop>
           <Route exact path='/' component={() => this.StartPage(this.state.size)} />
-        </ScrollToTop>
       </Router>
     )
   }

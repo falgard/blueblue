@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
 import Waypoint from 'react-waypoint'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './Ceremony.styles.scss'
@@ -22,6 +22,24 @@ export default class Ceremony extends React.Component {
     this.setState({
       animate: true
     })
+  }
+
+  renderBackground(bgClasses) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/hedvig.jpg'} strength={300} bgHeight={'700px'}>
+        <div className={mainStyles.caption}>
+            <p>Vigsel</p>
+          </div>
+        <div style={{ height: '700px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+      <div className={mainStyles.caption}>
+      <p>Vigsel</p>
+        </div>
+    </div>
+    )
   }
 
   render() {
@@ -60,21 +78,20 @@ export default class Ceremony extends React.Component {
         </div>
       </div>
 
-      <div className={imageClasses}>
-        <div className={mainStyles.caption}>
-          <p>Vigsel</p>
-        </div>
-      </div>
+      {this.renderBackground(imageClasses)}
 
       <div className={mainStyles.holder}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={infobox}>
           <img className={mainStyles.icon} src="images/icons/ring.svg"/>
-          <p>Sker i <a href="https://goo.gl/maps/2QR8xvJehyt" target="_blank">Hedvig Eleonora kyrka</a> kl 13.00 på Storgatan.</p>
+          <p>Sker i <a href="https://goo.gl/maps/2QR8xvJehyt" target="_blank">Hedvig Eleonora kyrka</a> på Storgatan kl 13.00.</p>
           </div>
         </div>
       </div>
+
+      <div>
+  </div>
     </section>
     )
   }

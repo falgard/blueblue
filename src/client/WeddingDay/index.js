@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Countdown from 'react-countdown-now';
-import Waypoint from 'react-waypoint'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './WeddingDay.styles.scss'
@@ -10,7 +10,6 @@ import styles from './WeddingDay.styles.scss'
 export default class WeddingDay extends React.Component {
   constructor(props) {
     super(props)    
-    this.handleWaypointEnter = this.handleWaypointEnter.bind(this)
 
     this.state = {
       animate: false,
@@ -18,10 +17,20 @@ export default class WeddingDay extends React.Component {
     }
   }
 
-  handleWaypointEnter() {
-    this.setState({
-      animate: true
-    })
+  renderBackground(bgClasses, renderer) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/varvet3.jpg'} strength={300} bgHeight={'700px'} bgStyle={{left:'30%'}}>
+          <div className={styles.small}>
+            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
+          </div>
+          <div style={{ height: '700px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
+        </div>
+    )
   }
 
   render() {
@@ -32,14 +41,12 @@ export default class WeddingDay extends React.Component {
       [styles.small]: this.state.small
     })
 
-    const animate = this.state.animate
-    const animateBoxWaypoint = classNames({
-      [styles.small]: this.state.small,
-      'animated': animate,
-      'fadeInUp': animate
+    const completeClasses = classNames({
+      [styles.countdown]: true,
+      [styles.complete]: true
     })
   
-    const Completionist = () => <span>Hipp hipp hurra!</span>;
+    const Completionist = () => <div className={completeClasses}><span>Hipp hipp hurra!</span></div>;
   
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
       if (completed) {
@@ -58,9 +65,7 @@ export default class WeddingDay extends React.Component {
   
     return (
       <section id={this.props.id}>
-        <div className={imageClasses}>
-            <Countdown date={'Sat, 28 Jul 2018 13:00:00'} renderer={renderer}/>
-        </div>
+        {this.renderBackground(imageClasses, renderer)}
       </section>
     )
   }

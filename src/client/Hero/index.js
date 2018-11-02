@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Waypoint from 'react-waypoint'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 import styles from './Hero.styles.scss'
@@ -23,16 +24,42 @@ export default class Hero extends React.Component {
     })
   }
 
+  renderBackground(bgClasses, animationClasses) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/varvet2.jpg'} strength={500} bgHeight={'700px'}>
+          <div className={styles.bg__overlay}></div>
+            <div className={animationClasses}>
+              <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
+              <h2>Cissi &amp; Micke</h2>
+              <p>07.28.2018</p>
+            </div>
+          <div style={{ height: '700px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+        <div className={styles.bg__overlay}></div>
+          <div className={animationClasses}>
+            <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
+            <h2>Cissi &amp; Micke</h2>
+            <p>07.28.2018</p>
+          </div>
+      </div>
+    )
+  }
+
   render() {
     const heroClasses = classNames({
       [mainStyles.bg__img]: true,
       [styles.bg__img_varvet2]: true,
+      [mainStyles.small]: this.state.small,
       [styles.small]: this.state.small
     })
 
     const animationClasses = classNames({
       [mainStyles.caption]: true,
       [styles.caption]: true,
+      [mainStyles.small]: this.state.small,
       [styles.small]: this.state.small,
       'animated': true,
       'fadeInUp': true
@@ -52,14 +79,8 @@ export default class Hero extends React.Component {
 
   return (
     <section id={this.props.id}>
-      <div className={heroClasses}>
-        <div className={styles.bg__overlay}></div>
-          <div className={animationClasses}>
-            <h1 className={styles.holder}><span>Blå blå är kärleken</span></h1>
-            <h2>Cissi &amp; Micke</h2>
-            <p>07.28.2018</p>
-          </div>
-      </div>
+      {this.renderBackground(heroClasses, animationClasses)}
+
       <div className={infobox}>
         <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />

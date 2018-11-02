@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Countdown from 'react-countdown-now';
 import Waypoint from 'react-waypoint'
+import { Parallax } from 'react-parallax'
 
 import mainStyles from '../App.scss'
 //import styles from './Dinner.styles.scss'
@@ -22,6 +22,24 @@ export default class Dinner extends React.Component {
     this.setState({
       animate: true
     })
+  }
+
+  renderBackground(bgClasses) {
+    if (this.state.small) {
+      return (
+        <Parallax bgImage={'../../images/varvet.jpg'} strength={300} bgHeight={'600px'} bgStyle={{left:'50%'}}>
+        <div className={mainStyles.caption}>
+            <p>Middag</p>
+          </div>
+        <div style={{ height: '600px' }} />
+        </Parallax>)
+    }
+     return (<div className={bgClasses}>
+        <div className={mainStyles.caption}>
+          <p>Middag</p>
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -45,18 +63,15 @@ export default class Dinner extends React.Component {
   
     return (
       <section id={this.props.id}>
-        <div className={imageClasses}>
-          <div className={mainStyles.caption}>
-            <p>Middag</p>
-          </div>
-        </div>
+      
+      {this.renderBackground(imageClasses)}
 
       <div className={mainStyles.holder}>
       <div className={animateBoxWaypoint}>
           <Waypoint onEnter={this.handleWaypointEnter} />
           <div className={infobox}>
             <img className={mainStyles.icon} src="images/icons/toast.svg"/>
-            <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. <a href="mailto:lise">Lise Wetzel</a> och <a href="mailto:chris">Christofer Holmgren</a> är toastmasters, meddela dom i fall ni vill uppträda och eventuella allergier/vegetarianer.</p>
+            <p>Efter vigseln har vi ordnat transport från strandvägen till varvet där middagen kommer att hållas. <a href="https://www.facebook.com/lise.falgard" target="_blank">Lise Wetzel</a> och <a href="https://www.facebook.com/christofer.holmgren.1" target="_blank">Christofer Holmgren</a> är toastmasters, meddela dom i fall ni vill uppträda och eventuella allergier/vegetarianer.</p>
           </div>
         </div>
       </div>
